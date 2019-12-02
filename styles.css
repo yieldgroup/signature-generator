@@ -6805,12 +6805,28 @@ figcaption {
   border-bottom: 3px solid #62636b;
 }
 .drawing:before {
-  font-size: 1.7em;
+  font-size: 1.2em;
   content: "Sign Here";
   position: absolute;
-  left: 32px;
-  top: 220px;
+  left: 34px;
+  top: 212px;
   z-index: -1;
+}
+
+@media screen and (max-width: 991px) {
+  .drawing:before {
+    left: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .drawing:before {
+    left: 24px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .drawing:before {
+    left: 12px;
+  }
 }
 
 .button {
@@ -6842,4 +6858,9 @@ figcaption {
 
 .logo {
   width: 160px;
+}
+
+.section.bg-primary {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
