@@ -1,0 +1,35 @@
+body {
+  color: #333;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.drawing {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  height: 210px;
+  left: 100px;
+  border-bottom: 3px solid black;
+}
+.drawing:before {
+  font-size: 2em;
+  content: "Sign Here";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.please-sign {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid;
+  text-align: center;
+  padding: 10px;
+  margin-top: 180px;
+  margin-bottom: 20px;
+}

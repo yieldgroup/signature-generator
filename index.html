@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="w-mod-js w-mod-ix wf-dmsans-n4-active wf-dmsans-i4-active wf-dmsans-n5-active wf-dmsans-i5-active wf-dmsans-n7-active wf-dmserifdisplay-n4-active wf-active"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signature Generator - Yield Group</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.13/svg.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=DM+Sans:regular,italic,500,500italic,700%7CDM+Serif+Display:regular"
+      media="all"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-152424752-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-152424752-1");
+    </script>
+  </head>
+  <body>
+    <div class="section section-large bg-primary">
+      <div class="container">
+        <div>
+          <div class="align-left">
+            <div class="text-large text-white">
+              Tired of working hard to make your signature hard to read? Try our
+            </div>
+            <h1 class="text-white">Signature Generator</h1>
+            <div class="text-large text-white">
+              Signing illegibly has never been easier. 100% free forever.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="decoration-container">
+        <img
+          src="https://uploads-ssl.webflow.com/5db2d6e841deb06a4d321652/5db2d6e841deb083ef32171a_grid-white.svg"
+          alt=""
+          class="decoration-grid"
+        />
+        <div
+          data-w-id="7553a581-113a-88ae-0b78-511d7f79b584"
+          class="decoration-circle bg-primary-3"
+          style="will-change: transform; transform: translate3d(0px, -10.2442px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;"
+        ></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div id="drawing" class="drawing"></div>
+        <div class="button-section">
+          <a class="button w-button">Click to Sign</a>
+        </div>
+
+        <div class="about">
+          <p>
+            Made by
+            <a href="https://yieldgroup.co" target="_blank">Yield Group</a>. In
+            addition to having fun, we help drive measurable growth for
+            business.
+          </p>
+          <img class="logo" src="yield-logo.png" alt="The Yield Group logo" />
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("click", function() {
+        document.getElementById("drawing").innerHTML = "";
+        var draw = SVG()
+          .addTo("#drawing")
+          .size("100%", "100%");
+        var path = draw.path("M 50 200");
+        path.fill("none");
+        path.stroke({
+          color: "#222337",
+          width: 4,
+          linecap: "round",
+          linejoin: "round"
+        });
+        path.plot(
+          "M 50 200 " +
+            new Array(22)
+              .fill()
+              .map(function(v, i) {
+                return generateCurve(i * 2);
+              })
+              .join(" ")
+        );
+      });
+
+      function generateCurve(step) {
+        return (
+          "c" +
+          [
+            Math.floor(Math.random() * 100), // first control X
+            Math.floor(Math.random() * -100), // first control Y
+            Math.floor(Math.random() * 200), // second control X
+            Math.floor(Math.random() * -200), // second control Y
+            Math.floor(Math.random() * 10) *
+              step *
+              (Math.random() * 1 > 0.2 ? 1 : -1), // final point X
+            Math.floor(Math.random() * 2) * (Math.random() * 1 > 0.5 ? 1 : -2) // final point Y
+          ].join(" ")
+        );
+      }
+    </script>
+  </body>
+</html>
